@@ -16,12 +16,14 @@ async function main() {
 
   const post2 = await prisma.article.upsert({
     where: { title: 'post2' },
-    update: {},
+    update: {
+      published: true
+    },
     create: {
       title: 'post2',
       body: 'post2',
       description: 'this is post 2',
-      published: false,
+      published: true,
     },
   });
 
